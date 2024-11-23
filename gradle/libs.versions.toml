@@ -1,0 +1,45 @@
+[versions]
+# TODO
+myLibrary = "0.2.0"
+kotlin = "2.0.21"
+ktor = "3.0.0"
+logback = "1.5.11"
+ktlintGradlePlugin = "12.1.1"
+vanniktechMavenPublish = "0.29.0"
+kotlinxCoroutines = "1.9.0"
+
+[libraries]
+ktorServerCore = { module = "io.ktor:ktor-server-core-jvm", version.ref = "ktor" }
+ktorServerResources = { module = "io.ktor:ktor-server-resources", version.ref = "ktor" }
+ktorServerTestHost = { module = "io.ktor:ktor-server-test-host", version.ref = "ktor" }
+ktorServerNetty = { module = "io.ktor:ktor-server-netty-jvm", version.ref = "ktor" }
+
+# for test
+# TODO
+myLibrary = { module = "com.example.myLibrary:my-library", version.ref = "myLibrary" }
+logbackClassic = { module = "ch.qos.logback:logback-classic", version.ref = "logback" }
+ktorServerConfigYaml = { module = "io.ktor:ktor-server-config-yaml", version.ref = "ktor" }
+kotlinTestJunit = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
+kotlinxCoroutinesTest = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "kotlinxCoroutines" }
+
+# for build-logic
+kotlinGradlePlugin = { group = "org.jetbrains.kotlin", name = "kotlin-gradle-plugin", version.ref = "kotlin" }
+kotlinGradlePluginApi = { group = "org.jetbrains.kotlin", name = "kotlin-gradle-plugin-api", version.ref = "kotlin" }
+ktlintGradlePlugin = { module = "org.jlleitschuh.gradle:ktlint-gradle", version.ref = "ktlintGradlePlugin" }
+vanniktechMavenPublishGradlePlugin = { module = "com.vanniktech:gradle-maven-publish-plugin", version.ref = "vanniktechMavenPublish" }
+
+[plugins]
+kotlinMultiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
+kotlinJvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
+ktor = { id = "io.ktor.plugin", version.ref = "ktor" }
+vanniktechMavenPublish = { id = "com.vanniktech.maven.publish", version.ref = "vanniktechMavenPublish" }
+binaryCompatibilityValidator = { id = "org.jetbrains.kotlinx.binary-compatibility-validator", version = "0.16.3" }
+ktlint = { id = "org.jlleitschuh.gradle.ktlint", version.ref = "ktlintGradlePlugin" }
+
+# TODO
+buildConventionLint = { id = "com.example.mylibrary.buildLogic.lint", version = "unspecified" }
+buildConventionPublish = { id = "com.example.mylibrary.buildLogic.publish", version = "unspecified" }
+
+# for test
+# TODO
+myLibrary = { id = "com.example.myLibrary", version.ref = "myLibrary" }
